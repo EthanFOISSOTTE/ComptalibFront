@@ -28,7 +28,7 @@ Développer une application permettant d'afficher et de gérer une liste de Pok�
 - **NuxtJS** v3.16.0
 - **VueJS** v3.5.13
 - **PokéAPI** (API pour les données Pokémon)
-- **Framework CSS** *(??)*
+- **CSS** *NuxtJS UI*
 - **Stockage local** *(LocalStorage)*
 
 ## Plan de développement :
