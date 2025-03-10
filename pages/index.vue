@@ -3,7 +3,7 @@ import { ref, onMounted, computed } from 'vue';
 import '../assets/styles.css';
 
 const pokemon = ref([]);
-const searchQuery = ref('');
+const search = ref('');
 
 const Pokemon = async () => {
   const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
@@ -22,7 +22,7 @@ onMounted(Pokemon);
 
 const filter = computed(() => {
   return pokemon.value.filter(pokemon =>
-      pokemon.name.toLowerCase().includes(searchQuery.value.toLowerCase())
+      pokemon.name.toLowerCase().includes(search.value.toLowerCase())
   );
 });
 </script>
@@ -32,7 +32,7 @@ const filter = computed(() => {
     <h1>Pokédex</h1>
 
     <div class="Search">
-      <UInput v-model="searchQuery" color="primary" variant="outline" placeholder="Rechercher un Pokémon..." />
+      <UInput v-model="search" color="primary" placeholder="Rechercher un Pokémon..." icon="i-heroicons-magnifying-glass-20-solid" autocomplete="off" :ui="{ icon: {trailing: { pointer: ''} } }"/>
     </div>
 
     <ul>
