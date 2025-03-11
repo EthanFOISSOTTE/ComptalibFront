@@ -4,9 +4,10 @@ import '../assets/styles.css';
 
 const pokemon = ref([]);
 const search = ref('');
+const Nbr = 100;
 
 const Pokemon = async () => {
-  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${Nbr}`);
   const data = await response.json();
 
   pokemon.value = data.results.map((pokemon) => {
