@@ -30,18 +30,26 @@ const filter = computed(() => {
 
 <template>
   <div>
-    <h1>Pokédex</h1>
-
-    <div class="Search">
-      <UInput v-model="search" color="primary" placeholder="Rechercher un Pokémon..." icon="i-heroicons-magnifying-glass-20-solid" autocomplete="off" :ui="{ icon: {trailing: { pointer: ''} } }"/>
+    <div class="nav-container">
+      <div class="nav-title"><h1>Pokédex Comptalib</h1></div>
+      <div class="nav-idk"></div>
     </div>
 
-    <ul>
-      <li v-for="pokemon in filter" :key="pokemon.name">
-        <NuxtLink :to="`/pokemon/${pokemon.name}`">
-          <img :src="pokemon.sprite"> {{ pokemon.name }}
-        </NuxtLink>
-      </li>
-    </ul>
+    <div class="search-container">
+      <div class="Search">
+        <UInput v-model="search" color="primary" placeholder="Rechercher un Pokémon..." icon="i-heroicons-magnifying-glass-20-solid" autocomplete="off" :ui="{ icon: {trailing: { pointer: ''} } }"/>
+      </div>
+    </div>
+
+    <div class="pokemon-container">
+      <ul>
+        <li v-for="pokemon in filter" :key="pokemon.name">
+          <NuxtLink :to="`/pokemon/${pokemon.name}`">
+            <img :src="pokemon.sprite"> {{ pokemon.name }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </template>
