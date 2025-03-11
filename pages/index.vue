@@ -38,7 +38,9 @@ const filter = computed(() => {
 
     <ul>
       <li v-for="pokemon in filter" :key="pokemon.name">
-        <img :src="pokemon.sprite"> {{ pokemon.name }}
+        <NuxtLink :to="`/pokemon/${pokemon.name}`">
+          <img :src="pokemon.sprite"> {{ pokemon.name }}
+        </NuxtLink>
       </li>
     </ul>
   </div>
