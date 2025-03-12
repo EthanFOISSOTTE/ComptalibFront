@@ -40,16 +40,19 @@ fetchPokemonDetails();
 </script>
 
 <template>
-  <div v-if="pokemonDetail" class="pokemon-detail">
-    <h1>{{ pokemonDetail.name }}</h1>
-    <img :src="pokemonDetail.sprite">
-    <div><strong>Types:</strong> {{ pokemonDetail.types }}</div>
-    <div><strong>Hauteur:</strong> {{ pokemonDetail.height }}dm</div>
-    <div><strong>Poids:</strong> {{ pokemonDetail.weight }}</div>
-    <div><strong>Statistiques:</strong></div>
-    <ul>
-      <li v-for="(stat, key) in pokemonDetail.stats" :key="key">{{ key }}: {{ stat }}</li>
-    </ul>
-    <NuxtLink to="/">Retour à la liste</NuxtLink>
-  </div>
+  <body>
+    <div v-if="pokemonDetail" class="pokemon-detail">
+      <h1>{{ pokemonDetail.name }}</h1>
+      <img :src="pokemonDetail.sprite">
+      <div><strong>Types:</strong> {{ pokemonDetail.types }}</div>
+      <div><strong>Hauteur:</strong> {{ pokemonDetail.height }}dm</div>
+      <div><strong>Poids:</strong> {{ pokemonDetail.weight }}</div>
+      <div><strong>Statistiques:</strong></div>
+      <ul>
+        <li v-for="(stat, key) in pokemonDetail.stats" :key="key">{{ key }}: {{ stat }}</li>
+      </ul>
+      <NuxtLink to="/">Retour à la liste</NuxtLink>
+    </div>
+  </body>
+
 </template>
