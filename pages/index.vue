@@ -30,18 +30,43 @@ const filter = computed(() => {
 
 <template>
   <div>
-    <h1>Pokédex</h1>
-
-    <div class="Search">
-      <UInput v-model="search" color="primary" placeholder="Rechercher un Pokémon..." icon="i-heroicons-magnifying-glass-20-solid" autocomplete="off" :ui="{ icon: {trailing: { pointer: ''} } }"/>
+    <div class="nav-container">
+      <div class="nav-title"><h1>Pokédex Comptalib</h1></div>
+      <div class="nav-idk">
+        <div class="Team-title">
+          <UButton
+              icon="heroicons:cog-8-tooth"
+              color="purple"
+              variant="solid"
+              label="Gestion de votre équipe"
+          />
+        </div>
+        <img src="../assets/images/pokeapi.png">
+      </div>
     </div>
 
-    <ul>
-      <li v-for="pokemon in filter" :key="pokemon.name">
-        <NuxtLink :to="`/pokemon/${pokemon.name}`">
-          <img :src="pokemon.sprite"> {{ pokemon.name }}
-        </NuxtLink>
-      </li>
-    </ul>
+    <div class="search-container">
+      <div class="Search">
+        <UInput v-model="search" color="primary" icon="heroicons:magnifying-glass-20-solid" placeholder="Rechercher un Pokémon..." autocomplete="off" :trailing="false"/>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="pokemon-container">
+        <ul>
+          <li v-for="pokemon in filter" :key="pokemon.name">
+            <NuxtLink :to="`/pokemon/${pokemon.name}`">
+              <img :src="pokemon.sprite"> {{ pokemon.name }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+      <div class="team-container">
+        <p style="padding-top: 10px; padding-bottom: 10px">"Ici un aperçu de l'équipe"</p>
+        <UDivider />
+      </div>
+    </div>
+
+
   </div>
 </template>
