@@ -138,11 +138,21 @@ img {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.team-container {
     color: black;
     text-align: center;
+}
+
+.team-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.team-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.team-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .pokemon-container::-webkit-scrollbar {

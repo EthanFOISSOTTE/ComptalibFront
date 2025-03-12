@@ -1,10 +1,12 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import '../assets/styles.css';
+import { useTeamStore } from '../stores/team';
 
 const pokemon = ref([]);
 const search = ref('');
 const Nbr = 100;
+const teamStore = useTeamStore();
 
 const Pokemon = async () => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${Nbr}`);
@@ -58,15 +60,21 @@ const filter = computed(() => {
             <NuxtLink :to="`/pokemon/${pokemon.name}`">
               <img :src="pokemon.sprite"> {{ pokemon.name }}
             </NuxtLink>
+            <UButton @click="teamStore.addPokemon(pokemon)" color="green" label="Ajouter à l'équipe" />
           </li>
         </ul>
       </div>
       <div class="team-container">
         <p style="padding-top: 10px; padding-bottom: 10px">"Ici un aperçu de l'équipe"</p>
         <UDivider />
+        <div v-if="teamStore.team.length === 0">Aucun Pokémon dans l'équipe</div>
+        <ul>
+          <li v-for="(pokemon, index) in teamStore.team" :key="index">
+            <img :src="pokemon.sprite"> {{ pokemon.name }}
+            <UButton @click="teamStore.removePokemon(index)" color="red" label="Retirer" />
+          </li>
+        </ul>
       </div>
     </div>
-
-
   </div>
 </template>

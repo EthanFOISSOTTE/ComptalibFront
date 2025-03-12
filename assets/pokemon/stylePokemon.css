@@ -1,3 +1,19 @@
 .pokemon-detail {
     color: black;
 }
+
+h1 {
+    text-transform: capitalize;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(0deg, rgba(205,186,250,1) 0%, rgba(209,189,250,1) 18%, rgba(215,193,252,1) 36%, rgba(222,198,250,1) 56%, rgba(229,203,250,1) 81%, rgba(227,208,239,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
