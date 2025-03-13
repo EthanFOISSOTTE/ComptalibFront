@@ -1,18 +1,23 @@
-import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { defineStore } from 'pinia';
 
-export const useTeamStore = defineStore('team', () => {
-    const team = ref([])
+interface Pokemon {
+    name: string;
+    sprite: string;
+}
 
-    const addPokemon = (pokemon) => {
-        if (team.value.length < 6) {
-            team.value.push(pokemon)
-        }
-    }
-
-    const removePokemon = (index) => {
-        team.value.splice(index, 1)
-    }
-
-    return { team, addPokemon, removePokemon }
-})
+export const useTeamStore = defineStore('team', {
+    state: () => ({
+        team: [] as Pokemon[],
+    }),
+    actions: {
+        addPokemon(pokemon: Pokemon) {
+            if (this.team.length < 6 && !this.team.find(p => p.name === pokemon.name)) {
+                this.team.push(pokemon);
+            }
+        },
+        removePokemon(index: number) {
+            this.team.splice(index, 1);
+        },
+    },
+    persist: true, // Activer la persistance avec pinia-plugin-persistedstate
+});
