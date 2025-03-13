@@ -1,9 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
+import type { Ref } from 'vue';
 import '../assets/styles.css';
 import { useTeamStore } from '../stores/team';
 
-const pokemon = ref([]);
+const pokemon: Ref<{ name: string; sprite: string }[]> = ref([]);
 const search = ref('');
 const Nbr = 100;
 const teamStore = useTeamStore();
@@ -12,7 +13,7 @@ const Pokemon = async () => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${Nbr}`);
   const data = await response.json();
 
-  pokemon.value = data.results.map((pokemon) => {
+  pokemon.value = data.results.map((pokemon: { name: string; url: string }) => {
     const id = pokemon.url.split("/").slice(-2, -1)[0];
     return {
       name: pokemon.name,
@@ -35,14 +36,6 @@ const filter = computed(() => {
     <div class="nav-container">
       <div class="nav-title"><h1>Pokédex Comptalib</h1></div>
       <div class="nav-idk">
-        <div class="Team-title">
-          <UButton
-              icon="heroicons:cog-8-tooth"
-              color="purple"
-              variant="solid"
-              label="Gestion de votre équipe"
-          />
-        </div>
         <img src="../assets/images/pokeapi.png">
       </div>
     </div>
@@ -65,7 +58,7 @@ const filter = computed(() => {
         </ul>
       </div>
       <div class="team-container">
-        <p style="padding-top: 10px; padding-bottom: 10px">"Ici un aperçu de l'équipe"</p>
+        <p style="padding-top: 10px; padding-bottom: 10px">Votre Équipe Pokémon</p>
         <UDivider />
         <div v-if="teamStore.team.length === 0">Aucun Pokémon dans l'équipe</div>
         <ul>
