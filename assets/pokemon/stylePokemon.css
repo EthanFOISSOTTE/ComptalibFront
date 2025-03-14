@@ -1,39 +1,35 @@
-.pokemon-detail {
-    color: black;
-}
-
-h1 {
-    text-transform: capitalize;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', sans-serif !important;
+    font-display: swap;
+    font-size: 12px;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    background: rgb(205,186,250);
     background: linear-gradient(0deg, rgba(205,186,250,1) 0%, rgba(209,189,250,1) 18%, rgba(215,193,252,1) 36%, rgba(222,198,250,1) 56%, rgba(229,203,250,1) 81%, rgba(227,208,239,1) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
 }
 
 .pokemon-container-info {
-    width: 96%;
+    width: 60%;
     margin-left: 30px;
     margin-top: 20px;
-    margin-right: 90px;
     margin-bottom: 20px;
     height: 70vh;
-    overflow-y: auto;
     border: 2px solid #ccc;
     padding: 10px;
-    /*background: rgba(235, 220, 253, 0.2);*/
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .name-container {
+    display: flex;
     color: black;
     width: 100%;
     height: 70px;
@@ -42,104 +38,157 @@ body {
 }
 
 .name {
+    display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: capitalize;
+    width: 100%;
+    font-size: 22px;
+    color: #f97c3d;
+}
+
+.Button-return {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #f97c3d;
+    font-size: 16px;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
 
 .sprite-container {
     display: flex;
     justify-content: center;
-    border: solid 1px black;
-    margin: 5px;
+    align-items: center;
+    margin: auto;
     max-width: 150px;
-    max-height: 150px
+    max-height: 150px;
+}
+
+.sprite-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .id-type-container {
-    display: block;
-    text-align: center;
-    border: solid 1px black;
-    margin: 5px;
-    max-width: 200px;
-    max-height: 150px
+    position: absolute; /* Positionnement absolu par rapport à .pokemon-container-info */
+    top: 10px; /* Décalage vers le haut */
+    right: 10px; /* Décalage vers la droite */
+    padding: 5px;
+    width: 250px;
+    color: black;
+    height: 150px; /* Augmenter la hauteur max si nécessaire pour contenir plusieurs types */
+    background: rgba(255, 255, 255, 0.7); /* Optionnel : pour rendre le fond légèrement transparent */
+    border-radius: 10px; /* Optionnel : pour arrondir les bords */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel : ajouter une ombre */
+    display: flex;
+    flex-direction: column; /* Affichage des types en colonne */
+    overflow-y: auto; /* Permet de scroller si les types dépassent la hauteur du conteneur */
+}
+
+.types-title {
+    background-color: #a58ae8;
+    color: white;
+    width: 235px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .height-weight-container {
-    border: solid 1px black;
-    margin: 5px;
-    max-width: 200px;
-    max-height: 150px
+    position: absolute; /* Positionnement absolu par rapport à .pokemon-container-info */
+    top: 10px; /* Décalage vers le haut */
+    left: 10px; /* Décalage vers la gauche */
+    padding: 10px; /* Augmenter le padding pour plus d'espace */
+    width: 250px; /* Augmenter la largeur maximale */
+    height: 150px; /* Augmenter la hauteur maximale */
+    display: flex;
+    flex-direction: column; /* Affichage des informations en colonne */
+    align-items: flex-start; /* Alignement des éléments à gauche */
+    overflow-y: auto; /* Permet d'ajouter un défilement vertical si nécessaire */
 }
 
-.height-container {
-    display: block;
-    margin: 5px;
+.height-container, .weight-container {
+    display: flex;
+    flex-direction: column; /* Affichage en colonne pour chaque section */
+    margin-bottom: 8px; /* Espacement entre les sections */
 }
 
-.height-title {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+.height-title, .weight-title {
     background-color: #a58ae8;
+    width: 228px;
+    height: 30px;
+    align-content: center;
     color: white;
     padding-left: 8px;
-}
-
-.height-value {
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-color: #ffffff;
-    text-align:  right;
     padding-right: 8px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-.weight-container {
-    display: block;
-    margin: 5px;
-}
-
-.weight-title {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background-color: #a58ae8;
-    color: white;
-    padding-left: 8px;
-}
-
-.weight-value {
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+.height-value, .weight-value {
     background-color: #ffffff;
-    text-align:  right;
+    text-align: right;
+    height: 20px;
     padding-right: 8px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: black;
 }
 
 .stats-container {
-    border: solid 1px black;
+    background-color: white;
     margin: 5px;
 }
 
-/* Conteneur des types */
-.types-container {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
+.stats-title {
+    background-color: #a58ae8;
+    color: white;
+    padding: 10px;
 }
 
-/* Style des badges des types */
+.types-container {
+    display: flex;
+    flex-direction: column; /* Les types s'affichent en colonne */
+    gap: 8px; /* Espace entre les types */
+    margin-top: 8px;
+    align-items: flex-start; /* Alignement à gauche pour les types */
+}
+
 .type-badge {
-    padding: 5px 12px; /* Ajoute de l'espace autour du texte */
+    padding: 5px 12px;
     border-radius: 10px;
     color: white;
     font-weight: bold;
     text-transform: capitalize;
     text-align: center;
-    display: inline-block; /* Ajuste la largeur automatiquement */
-    white-space: nowrap; /* Empêche le retour à la ligne */
-    font-size: 14px; /* Réduit la taille de la police */
-    letter-spacing: normal; /* Assure un espacement normal des lettres */
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 14px;
+    letter-spacing: normal;
 }
 
-/* Couleurs spécifiques pour chaque type */
+.description-container {
+    position: absolute; /* Positionnement absolu par rapport au parent .pokemon-container-info */
+    bottom: 5px; /* Décalage par rapport au bas */
+    right: 10px; /* Décalage par rapport à la droite */
+    max-width: 450px; /* Largeur maximale de la description */
+    max-height: 100px; /* Hauteur maximale de la description */
+    padding: 10px;
+    background-color: white; /* Fond blanc pour le texte */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    overflow-y: auto; /* Ajouter un défilement vertical si le texte dépasse */
+    font-size: 14px; /* Taille de la police */
+    color: black; /* Couleur du texte */
+    line-height: 1.4; /* Espacement des lignes */
+    font-size: 10px;
+}
+
 .type-badge.normal { background-color: #A8A878; }
 .type-badge.fire { background-color: #F08030; }
 .type-badge.water { background-color: #6890F0; }
@@ -158,3 +207,93 @@ body {
 .type-badge.dark { background-color: #705848; }
 .type-badge.steel { background-color: #B8B8D0; }
 .type-badge.fairy { background-color: #EE99AC; }
+
+@media (max-width: 768px) {
+    .pokemon-container-info {
+        width: 90%; /* Réduire la largeur pour s'adapter aux petits écrans */
+        margin-left: auto;
+        margin-right: auto;
+        height: auto; /* Ajuster la hauteur pour éviter le chevauchement */
+        padding: 10px;
+    }
+
+    .name-container {
+        height: auto; /* Ajuste la hauteur de l'en-tête */
+    }
+
+    .name {
+        font-size: 18px; /* Réduire la taille de la police pour les petits écrans */
+    }
+
+    .Button-return {
+        position: static; /* Remettre le bouton dans le flux normal pour ne pas se chevaucher */
+        width: 100%; /* Le bouton occupe toute la largeur */
+        margin-top: 10px; /* Espacement avec d'autres éléments */
+    }
+
+    .sprite-container {
+        max-width: 100px; /* Réduire la taille du sprite */
+        max-height: 100px;
+    }
+
+    .id-type-container,
+    .height-weight-container {
+        position: static; /* Ne pas positionner absolument pour ne pas chevaucher */
+        width: 100%; /* Les sections prennent toute la largeur */
+        height: auto; /* Hauteur auto pour éviter la coupure des informations */
+        padding: 10px;
+    }
+
+    .description-container {
+        position: static; /* Enlever le positionnement absolu */
+        margin-top: 10px; /* Ajouter un espacement avec le bouton */
+        max-width: 100%; /* Largeur maximale 100% */
+        max-height: auto; /* Hauteur dynamique */
+        font-size: 12px; /* Réduire la taille de la police sur petits écrans */
+    }
+
+    .types-container {
+        width: 100%;
+        flex-direction: row; /* Les types s'affichent maintenant horizontalement */
+        justify-content: space-around; /* Espacement égal entre les badges */
+    }
+
+    .type-badge {
+        font-size: 12px; /* Réduire la taille de la police des badges */
+    }
+}
+
+/* Médias Query pour les très petits écrans (smartphones en portrait) */
+@media (max-width: 480px) {
+    .pokemon-container-info {
+        width: 100%; /* Prendre toute la largeur disponible */
+    }
+
+    .Button-return {
+        font-size: 14px; /* Taille plus petite pour le bouton */
+        padding: 8px 12px; /* Réduire la taille du bouton */
+        padding-top: 25px;
+    }
+
+    .name {
+        font-size: 16px; /* Réduire la taille de la police du nom */
+    }
+
+    .description-container {
+        font-size: 10px; /* Réduire la taille du texte dans la description */
+    }
+
+    .sprite-container {
+        max-width: 80px; /* Réduire encore plus la taille de l'image du sprite */
+        max-height: 80px;
+    }
+
+    .types-container {
+        flex-direction: column; /* Afficher les types en colonne sur les petits écrans */
+        align-items: center; /* Centrer les types */
+    }
+
+    .type-badge {
+        font-size: 10px; /* Réduire la taille des badges pour les petits écrans */
+    }
+}
