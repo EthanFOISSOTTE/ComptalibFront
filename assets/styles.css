@@ -1,15 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', sans-serif !important;
+    font-display: swap;
+    font-size: 12px;
     margin: 0;
     padding: 0;
     background: rgb(205,186,250);
     background: linear-gradient(0deg, rgba(205,186,250,1) 0%, rgba(209,189,250,1) 18%, rgba(215,193,252,1) 36%, rgba(222,198,250,1) 56%, rgba(229,203,250,1) 81%, rgba(227,208,239,1) 100%);
 }
 
-h1 {
+.nav-title h1 {
+    padding-top: 10px;
     text-align: center;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 1.7vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
     color: #f97c3d;
 }
 
@@ -40,7 +49,7 @@ h1 {
     border-radius: 8px;
     font-size: 1rem;
     color: black !important;
-
+    font-size: 10px;
 }
 
 ul {
@@ -104,6 +113,7 @@ img {
 
 .search-container {
     display: flex;
+    color: black;
     width: 100%;
     height: 70px;
     background: rgb(255,255,255);
@@ -130,6 +140,7 @@ img {
 }
 
 .team-container {
+    overflow-y: auto;
     margin-top: 20px;
     width: 32%;
     height: 70vh;
@@ -140,6 +151,10 @@ img {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     color: black;
     text-align: center;
+}
+
+.team-container ul {
+    display: flex;
 }
 
 .team-container::-webkit-scrollbar {
@@ -168,26 +183,48 @@ img {
     background: #555;
 }
 
+.Button-add {
+    font-size: 10px;
+}
 
-@media screen and (max-width: 600px) {
+.Button-remove {
+    font-size: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-title h1 {
+        font-size: 2vw;
+        text-align: center;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pokemon-container {
+        width: 90%;
+        margin-left: 0;
+    }
+
+    .team-container {
+        width: 90%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
     h1 {
-        font-size: 2rem;
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .Search {
+        margin-left: 5%;
     }
 
     .Search input {
         width: 90%;
-    }
-
-    ul {
-        gap: 10px;
-    }
-
-    li {
-        padding: 8px;
-    }
-
-    img {
-        width: 80px;
-        height: 80px;
     }
 }
