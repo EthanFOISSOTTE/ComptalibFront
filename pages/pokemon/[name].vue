@@ -58,18 +58,18 @@ onMounted(fetchPokemonDetails);
     </div>
 
     <div v-if="pokemonDetail" class="name-container">
-      <h1 class="name">{{ pokemonDetail.name }}</h1>
+      <h2 class="name">{{ pokemonDetail.name }}</h2>
     </div>
 
     <div class="main-content">
-      <div v-if="pokemonDetail" class="pokemon-detail">
-        <div class="pokemon-container-info">
+      <div v-if="pokemonDetail" class="pokemon-container-info">
+        <div>
           <div class="sprite-container">
             <img :src="pokemonDetail.sprite">
           </div>
           <div class="id-type-container">
             <div class="types-container">
-              <strong>Types:</strong>
+              <div class="types-title"><strong>Types:</strong></div>
               <div v-for="type in pokemonDetail.types" :key="type" :class="['type-badge', type]">
                 {{ type }}
               </div>
@@ -94,16 +94,16 @@ onMounted(fetchPokemonDetails);
             </div>
           </div>
           <div class="stats-container">
-            <div><strong>Statistiques:</strong></div>
+            <div class="stats-title"><strong>Statistiques:</strong></div>
             <ul>
               <li v-for="(stat, key) in pokemonDetail.stats" :key="key">{{ key }}: {{ stat }}</li>
             </ul>
           </div>
-          <div v-if="pokemonDescription">
+          <div v-if="pokemonDescription" class="description-container">
             <h3>Description :</h3>
             <p>{{ pokemonDescription }}</p>
           </div>
-          <NuxtLink to="/">Retour à la liste</NuxtLink>
+          <NuxtLink class="Button-return" to="/">Retour à la liste</NuxtLink>
         </div>
       </div>
 
