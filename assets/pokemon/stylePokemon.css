@@ -76,19 +76,19 @@ body {
 }
 
 .id-type-container {
-    position: absolute; /* Positionnement absolu par rapport à .pokemon-container-info */
-    top: 10px; /* Décalage vers le haut */
-    right: 10px; /* Décalage vers la droite */
+    position: absolute;
+    top: 10px;
+    right: 10px;
     padding: 5px;
     width: 250px;
     color: black;
-    height: 150px; /* Augmenter la hauteur max si nécessaire pour contenir plusieurs types */
-    background: rgba(255, 255, 255, 0.7); /* Optionnel : pour rendre le fond légèrement transparent */
-    border-radius: 10px; /* Optionnel : pour arrondir les bords */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel : ajouter une ombre */
+    height: 150px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Affichage des types en colonne */
-    overflow-y: auto; /* Permet de scroller si les types dépassent la hauteur du conteneur */
+    flex-direction: column;
+    overflow-y: auto;
 }
 
 .types-title {
@@ -100,22 +100,22 @@ body {
 }
 
 .height-weight-container {
-    position: absolute; /* Positionnement absolu par rapport à .pokemon-container-info */
-    top: 10px; /* Décalage vers le haut */
-    left: 10px; /* Décalage vers la gauche */
-    padding: 10px; /* Augmenter le padding pour plus d'espace */
-    width: 250px; /* Augmenter la largeur maximale */
-    height: 150px; /* Augmenter la hauteur maximale */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    width: 250px;
+    height: 150px;
     display: flex;
-    flex-direction: column; /* Affichage des informations en colonne */
-    align-items: flex-start; /* Alignement des éléments à gauche */
-    overflow-y: auto; /* Permet d'ajouter un défilement vertical si nécessaire */
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
 }
 
 .height-container, .weight-container {
     display: flex;
-    flex-direction: column; /* Affichage en colonne pour chaque section */
-    margin-bottom: 8px; /* Espacement entre les sections */
+    flex-direction: column;
+    margin-bottom: 8px;
 }
 
 .height-title, .weight-title {
@@ -153,10 +153,10 @@ body {
 
 .types-container {
     display: flex;
-    flex-direction: column; /* Les types s'affichent en colonne */
-    gap: 8px; /* Espace entre les types */
+    flex-direction: column;
+    gap: 8px;
     margin-top: 8px;
-    align-items: flex-start; /* Alignement à gauche pour les types */
+    align-items: flex-start;
 }
 
 .type-badge {
@@ -173,19 +173,19 @@ body {
 }
 
 .description-container {
-    position: absolute; /* Positionnement absolu par rapport au parent .pokemon-container-info */
-    bottom: 5px; /* Décalage par rapport au bas */
-    right: 10px; /* Décalage par rapport à la droite */
-    max-width: 450px; /* Largeur maximale de la description */
-    max-height: 100px; /* Hauteur maximale de la description */
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    max-width: 450px;
+    max-height: 100px;
     padding: 10px;
-    background-color: white; /* Fond blanc pour le texte */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    overflow-y: auto; /* Ajouter un défilement vertical si le texte dépasse */
-    font-size: 14px; /* Taille de la police */
-    color: black; /* Couleur du texte */
-    line-height: 1.4; /* Espacement des lignes */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    font-size: 14px;
+    color: black;
+    line-height: 1.4;
     font-size: 10px;
 }
 
@@ -210,90 +210,89 @@ body {
 
 @media (max-width: 768px) {
     .pokemon-container-info {
-        width: 90%; /* Réduire la largeur pour s'adapter aux petits écrans */
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
-        height: auto; /* Ajuster la hauteur pour éviter le chevauchement */
+        height: auto;
         padding: 10px;
     }
 
     .name-container {
-        height: auto; /* Ajuste la hauteur de l'en-tête */
+        height: auto;
     }
 
     .name {
-        font-size: 18px; /* Réduire la taille de la police pour les petits écrans */
+        font-size: 18px;
     }
 
     .Button-return {
-        position: static; /* Remettre le bouton dans le flux normal pour ne pas se chevaucher */
-        width: 100%; /* Le bouton occupe toute la largeur */
-        margin-top: 10px; /* Espacement avec d'autres éléments */
+        position: static;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .sprite-container {
-        max-width: 100px; /* Réduire la taille du sprite */
+        max-width: 100px;
         max-height: 100px;
     }
 
     .id-type-container,
     .height-weight-container {
-        position: static; /* Ne pas positionner absolument pour ne pas chevaucher */
-        width: 100%; /* Les sections prennent toute la largeur */
-        height: auto; /* Hauteur auto pour éviter la coupure des informations */
+        position: static;
+        width: 100%;
+        height: auto;
         padding: 10px;
     }
 
     .description-container {
-        position: static; /* Enlever le positionnement absolu */
-        margin-top: 10px; /* Ajouter un espacement avec le bouton */
-        max-width: 100%; /* Largeur maximale 100% */
-        max-height: auto; /* Hauteur dynamique */
-        font-size: 12px; /* Réduire la taille de la police sur petits écrans */
+        position: static;
+        margin-top: 10px;
+        max-width: 100%;
+        max-height: auto;
+        font-size: 12px;
     }
 
     .types-container {
         width: 100%;
-        flex-direction: row; /* Les types s'affichent maintenant horizontalement */
-        justify-content: space-around; /* Espacement égal entre les badges */
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     .type-badge {
-        font-size: 12px; /* Réduire la taille de la police des badges */
+        font-size: 12px;
     }
 }
 
-/* Médias Query pour les très petits écrans (smartphones en portrait) */
 @media (max-width: 480px) {
     .pokemon-container-info {
-        width: 100%; /* Prendre toute la largeur disponible */
+        width: 100%;
     }
 
     .Button-return {
-        font-size: 14px; /* Taille plus petite pour le bouton */
-        padding: 8px 12px; /* Réduire la taille du bouton */
+        font-size: 14px;
+        padding: 8px 12px;
         padding-top: 25px;
     }
 
     .name {
-        font-size: 16px; /* Réduire la taille de la police du nom */
+        font-size: 16px;
     }
 
     .description-container {
-        font-size: 10px; /* Réduire la taille du texte dans la description */
+        font-size: 10px;
     }
 
     .sprite-container {
-        max-width: 80px; /* Réduire encore plus la taille de l'image du sprite */
+        max-width: 80px;
         max-height: 80px;
     }
 
     .types-container {
-        flex-direction: column; /* Afficher les types en colonne sur les petits écrans */
-        align-items: center; /* Centrer les types */
+        flex-direction: column;
+        align-items: center;
     }
 
     .type-badge {
-        font-size: 10px; /* Réduire la taille des badges pour les petits écrans */
+        font-size: 10px;
     }
 }

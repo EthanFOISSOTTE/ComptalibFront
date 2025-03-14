@@ -214,8 +214,8 @@ img {
     }
 
     h1 {
-        font-size: clamp(1.2rem, 5vw, 1.8rem); /* La taille s’adapte entre 1.2rem et 1.8rem */
-        white-space: nowrap; /* Empêche le retour à la ligne */
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
