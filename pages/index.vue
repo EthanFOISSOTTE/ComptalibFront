@@ -53,7 +53,7 @@ const filter = computed(() => {
             <NuxtLink :to="`/pokemon/${pokemon.name}`">
               <img :src="pokemon.sprite"> {{ pokemon.name }}
             </NuxtLink>
-            <UButton @click="teamStore.addPokemon(pokemon)" color="green" label="Ajouter à l'équipe" />
+            <UButton @click="teamStore.addPokemon(pokemon)" class="Button-add" color="green" label="Ajouter à l'équipe" />
           </li>
         </ul>
       </div>
@@ -64,7 +64,7 @@ const filter = computed(() => {
         <ul>
           <li v-for="(pokemon, index) in teamStore.team" :key="index">
             <img :src="pokemon.sprite"> {{ pokemon.name }}
-            <UButton @click="teamStore.removePokemon(index)" color="red" label="Retirer" />
+            <UButton @click="teamStore.removePokemon(index)" class="Button-remove" color="red" label="Retirer" />
           </li>
         </ul>
       </div>
